@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">36个问题</string>
     <string name="button_label">来一句</string>
-    <string name="reset_label">重新开始</string>
-    <string name="all_shown">36 个问题都已经问完啦\n点击「重新开始」再来一轮</string>
+    <string name="reset_toast">已重新开始</string>
+    <string name="all_shown">36 个问题都已经问完啦</string>
     <string name="progress_format">剩余 %1$d / %2$d</string>
 
     <!-- 36 个问题 -->

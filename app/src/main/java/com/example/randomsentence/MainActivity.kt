@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import kotlin.random.Random
 
 class MainActivity : Activity() {
@@ -17,6 +18,10 @@ class MainActivity : Activity() {
 
     /** 已经展示过的句子（存句子内容而非序号，改句子顺序也不会出错） */
     private val shown = mutableSetOf<String>()
+
+    /** 隐藏重置：连续快速点击句子的计数 */
+    private var secretTapCount = 0
+    private var lastTapTime = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,10 +35,23 @@ class MainActivity : Activity() {
         countView = findViewById(R.id.countView)
 
         findViewById<Button>(R.id.button).setOnClickListener { showNext() }
-        findViewById<Button>(R.id.resetButton).setOnClickListener { reset() }
+        // 隐藏重置：连续快速点击句子 7 次
+        textView.setOnClickListener { onSentenceTapped() }
 
         updateCount()
         showNext()
+    }
+
+    /** 连续快速点击句子 SECRET_TAP_COUNT 次即重置；间隔超过 2 秒重新计数 */
+    private fun onSentenceTapped() {
+        val now = System.currentTimeMillis()
+        secretTapCount = if (now - lastTapTime < TAP_INTERVAL_MS) secretTapCount + 1 else 1
+        lastTapTime = now
+        if (secretTapCount >= SECRET_TAP_COUNT) {
+            secretTapCount = 0
+            reset()
+            Toast.makeText(this, R.string.reset_toast, Toast.LENGTH_SHORT).show()
+        }
     }
 
     /** 随机展示一句没出现过的句子；全部展示完则提示 */
@@ -65,5 +83,7 @@ class MainActivity : Activity() {
 
     companion object {
         private const val KEY_SHOWN = "shown_sentences"
+        private const val SECRET_TAP_COUNT = 7
+        private const val TAP_INTERVAL_MS = 2000L
     }
 }
