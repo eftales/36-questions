@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import kotlin.random.Random
 
 class MainActivity : Activity() {
 
@@ -54,18 +53,17 @@ class MainActivity : Activity() {
         }
     }
 
-    /** 随机展示一句没出现过的句子；全部展示完则提示 */
+    /** 按顺序展示下一个没出现过的句子；全部展示完则提示 */
     private fun showNext() {
-        val remaining = sentences.filter { it !in shown }
-        if (remaining.isEmpty()) {
+        val next = sentences.firstOrNull { it !in shown }
+        if (next == null) {
             textView.text = getString(R.string.all_shown)
             updateCount()
             return
         }
-        val sentence = remaining[Random.nextInt(remaining.size)]
-        shown.add(sentence)
+        shown.add(next)
         prefs.edit().putStringSet(KEY_SHOWN, shown).apply()
-        textView.text = sentence
+        textView.text = next
         updateCount()
     }
 
