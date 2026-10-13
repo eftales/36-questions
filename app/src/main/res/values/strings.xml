@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">随机句子</string>
+    <string name="button_label">来一句</string>
+
+    <!-- 36 个句子：替换成你自己的内容即可，数量不限 -->
+    <string-array name="sentences">
+        <item>把今天过好，明天自然不会太差。</item>
+        <item>慢慢来，比较快。</item>
+        <item>风会记得每一朵花的香。</item>
+        <item>所有的坚持，时间都会给出答案。</item>
+        <item>生活不是等待风暴过去，而是学会在雨中跳舞。</item>
+        <item>今天也要记得对自己好一点。</item>
+        <item>星光不问赶路人，时光不负有心人。</item>
+        <item>世界很大，别急着下结论。</item>
+        <item>种一棵树最好的时间是十年前，其次是现在。</item>
+        <item>保持热爱，奔赴山海。</item>
+        <item>每一顿饭都值得认真对待。</item>
+        <item>难过的时候，先睡一觉再说。</item>
+        <item>你走的每一步都算数。</item>
+        <item>别慌，月亮也正在大海某处迷茫。</item>
+        <item>日出之美便在于它脱胎于最深的黑暗。</item>
+        <item>无聊也是生活的一部分。</item>
+        <item>做三四月的事，在八九月自有答案。</item>
+        <item>心之所向，素履以往。</item>
+        <item>与其临渊羡鱼，不如退而结网。</item>
+        <item>今天的晚霞也很漂亮吧。</item>
+        <item>休息不是偷懒，是为了走更远的路。</item>
+        <item>凡事发生，必有利于我。</item>
+        <item>山高路远，看世界，也找自己。</item>
+        <item>允许一切如其所是。</item>
+        <item>把期待降低，把惊喜放大。</item>
+        <item>生活的答案，藏在你每天的日常里。</item>
+        <item>想都是问题，做才有答案。</item>
+        <item>日子还长，你要好好攒力气。</item>
+        <item>一杯热茶，也可以是一个下午的仪式感。</item>
+        <item>不必行色匆匆，不必光芒四射。</item>
+        <item>先完成，再完美。</item>
+        <item>记得抬头看看天。</item>
+        <item>所有的惊喜，都在路上。</item>
+        <item>平凡的日子里，也藏着小小的欢喜。</item>
+        <item>别怕绕远路，风景都在路上。</item>
+        <item>此刻就是最好的时刻。</item>
+    </string-array>
+</resources>
