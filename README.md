@@ -1,19 +1,23 @@
-# 随机句子
+# 36个问题
 
-点击按钮，随机展示 36 个句子中的一句。
+点击按钮，随机展示 36 个问题中的一个（Arthur Aron 的"36 Questions"中文版）。
 
-## 如何替换成自己的句子
+## 功能
+
+- 随机展示，**不重复**：出现过的问题不会再出现，直到点「重新开始」
+- 「重新开始」按钮：清空历史记录，所有问题重新参与随机
+- 进度记忆：关闭 App 再打开，进度不会丢失（存在手机本地，重置时清除）
+- 界面显示剩余数量
+
+## 如何修改问题内容
 
 打开 `app/src/main/res/values/strings.xml`，找到 `<string-array name="sentences">`，
-把里面的 `<item>` 一条条换成你自己的即可。**数量不限**（不必正好 36 条），
-代码会自动按实际数量随机。
+把里面的 `<item>` 一条条换成自己的即可，数量不限，代码自动适配。
 
-## 如何构建运行
+## 如何构建 APK
 
-1. 用 Android Studio 打开本目录（首次打开会自动下载 Gradle 8.7 和依赖）。
-2. 点击 Run ▶，选择模拟器或连接真机即可。
-3. 如需命令行构建 APK：先执行 `gradle wrapper`（或让 Android Studio 自动生成），
-   再运行 `./gradlew assembleDebug`，APK 输出在 `app/build/outputs/apk/debug/`。
+推送到 GitHub 即自动编译（GitHub Actions），在仓库的 **Actions** 页面
+下载 Artifacts 中的 `RandomSentence-APK`，解压得到 `app-debug.apk`。
 
 ## 技术说明
 
